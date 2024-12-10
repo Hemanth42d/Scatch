@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+}
+
+
+
+body,html{
+    min-height: 100%;
+    width: 100%;
+}
+
+main{
+    display: flex;
+    height: auto;
+}
+
+.productsSec{
+    padding: 3rem;
+    width: 100%;
+    min-height: 100vh;
+    margin-left: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4rem;
+    row-gap: 2.8rem;
+}
+
+.product{
+    width: 15vw;
+    height: 48vh;
+    border-radius: 5px;
+}
+
+.productImage img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.productImage{
+    height: 60%;
+    width: 100%;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productNAme p{
+    font-size: 20px;
+    padding: 0.5rem;
+    padding-left: 1.4rem;
+    background-color: blueviolet;
+}
+
+.productPriceDetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    background-color: burlywood ;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.addTocartIcon a{
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    border-radius: 50%;
+    padding: 0.1rem;
+    font-size: 25px;
+}
+
+footer{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    padding: 2rem;
+}

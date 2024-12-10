@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+}
+
+header{
+    height: 3vh;
+}
+
+header p{
+    padding: 0.5rem 0 0 0.5rem;
+    font-size: 24px;
+}
+
+main{
+    /* border: 2px solid black; */
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcomeText{
+    font-size: 35px;
+}
+
+.logoName{
+    color: blue;
+}
+
+.createAcc{
+    font-size: 20px;
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* border: 2px solid red; */
+}
+
+.createAccount{
+    width: 40vw;
+    height: 50vh;   
+    /* border: 2px solid red; */
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+}
+
+.formSec{
+    width: 100%;
+}
+
+.inputFullname, .inputEmail, .inputPassword{
+    display: block;
+    width: 70%;
+    margin: 0px 0px 15px 0px;
+    padding: 7px;
+    font-size: medium;
+    outline: none;
+    background-color: rgb(233, 233, 233);
+    border: none;
+    border-radius: 5px;
+    padding-left: 18px;
+}
+
+.loginAccText{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.orSec{
+    width: 10%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orSec p {
+    border-radius: 50%;
+    padding: 15px;
+    background-color: blue;
+    color: white;
+}
+
+.loginAccount{
+    width: 40vw;
+    padding-left: 5rem;
+}
+
+.createbtn{
+    color: white;
+    background-color: blue;
+    padding: 6px;
+    font-size: medium;
+    border-radius: 5px;
+    border: none;
+    margin-left: 15px;
+}
+
+.loginBtn{
+    color: white;
+    background-color: blue;
+    padding: 6px;
+    font-size: medium;
+    border-radius: 8px;
+    margin-left: 15px;
+    border: none;
+}
+
+
+footer{
+    height: 10vh;
+}
+

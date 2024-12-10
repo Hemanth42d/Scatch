@@ -1,0 +1,66 @@
+<div class="LeftNavSec">
+  <div class="leftNavTopSec">
+    <div class="leftNavTopSecSecondOne">
+      <a href="">All Products</a>
+      <a href="">Create new Product</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .LeftNavSec {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    min-width: 15%;
+    margin-left: 1.8rem;
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    max-height: 80vh;
+  }
+
+  .leftNavTopSec {
+    padding: 2rem 0 0 2rem;
+  }
+
+  .leftNavTopSecFirstOne {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .dropdown {
+    padding-left: 1.5rem;
+  }
+  .leftNavTopSecSecondOne a:nth-child(odd) {
+    color: rgb(94, 94, 94);
+  }
+
+  .leftNavTopSecSecondOne {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .leftNavBottomSec {
+    padding: 0 0 2rem 2rem;
+  }
+
+  .letfNavBottomSecDownLinks,
+  .leftNavTopSecSecondOne {
+    margin-top: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .letfNavBottomSecDownLinks a:nth-child(even) {
+    color: rgb(94, 94, 94);
+  }
+
+  .letfNavBottomSecDownLinks a,
+  .leftNavTopSecSecondOne a {
+    text-decoration: none;
+    color: black;
+  }
+</style>
