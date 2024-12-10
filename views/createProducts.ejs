@@ -4,8 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Product</title>
+    <link rel="stylesheet" href="/stylesheets/createProducts.css" />
   </head>
   <body>
     <%- include("partials/adminPanel") %>
+
+    <main>
+      <%- include("partials/leftNavAdmin") %>
+      <div class="mainLeftSec">
+        <div class="mainLeftSecHeading">
+          <p>Create New Product</p>
+        </div>
+        <div class="productDeatils">
+          <p class="productDetailsHeading">Product Details</p>
+          <div class="formSec">
+            <form action="">
+              <span class="productImageHeading">Product Image</span
+              ><input class="inputFileImage" type="file" />
+              <input
+                class="inputProductName"
+                type="text"
+                placeholder="Product Name"
+              />
+              <input
+                class="inputProductPrice"
+                type="number"
+                placeholder="Product price"
+              />
+              <input
+                class="inputProductDiscount"
+                type="number"
+                placeholder="Discount Price"
+              />
+              <p class="anotherFormSecHeading">Panel Details</p>
+              <input
+                class="inputProductBgcolor"
+                type="text"
+                placeholder="Background Color"
+              />
+              <input
+                class="inputProductPanelcolor"
+                type="text"
+                placeholder="Panel Color"
+              />
+              <input
+                class="inputProductTextColor"
+                type="text"
+                placeholder="Text Color"
+              />
+              <input type="submit" class="submitBtn" value="Create Product" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include("partials/footer") %>
   </body>
 </html>

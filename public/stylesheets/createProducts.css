@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+}
+
+main{
+    display: flex;
+    height: 80%;
+}
+
+.mainLeftSec{
+    width: 100%;
+}
+
+.mainLeftSecHeading p {
+    font-size: 20px;
+    padding: 2rem 0 1rem 5rem;
+    border-bottom: 1px solid rgb(170, 164, 164);
+}
+
+.productDetailsHeading{
+    font-size: 20px ;
+    padding: 2rem 0 0rem 5rem;
+}
+
+.formSec{
+    padding: 2rem 0 1rem 5rem;
+
+}
+.productImageHeading{
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.anotherFormSecHeading{
+    margin: 1rem 0 1rem 0;
+}
+
+.inputFileImage{
+    padding-left: 1rem;
+}
+
+.inputProductName, .inputProductPrice, .inputProductDiscount, .inputProductBgcolor, .inputProductPanelcolor, .inputProductTextColor {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 5px;
+    outline: none;
+    background-color: rgb(233, 233, 233);
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: medium;
+    width: 25%;
+}
+
+
+.submitBtn{
+    color: white;
+    background-color: blue;
+    padding: 6px;
+    font-size: medium;
+    border-radius: 5px;
+    border: none;
+    margin-left: 15px;
+}
+
+
+
+
+
+

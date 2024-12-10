@@ -14,11 +14,12 @@ body,html{
 }
 
 header{
-    height: 3vh;
+    height: 8vh;
+    border-bottom: 1px solid rgb(170, 164, 164);
 }
 
 header p{
-    padding: 0.5rem 0 0 0.5rem;
+    padding: 1rem 0 0 1rem;
     font-size: 24px;
 }
 
@@ -123,8 +124,4 @@ main{
     border: none;
 }
 
-
-footer{
-    height: 10vh;
-}
 
