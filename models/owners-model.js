@@ -12,7 +12,7 @@ const ownerSchema = mongoose.Schema({
         type : Array,
         default : []
     },
-    picture : String,
+    picture : Buffer,
     gstin : String
 });
 
