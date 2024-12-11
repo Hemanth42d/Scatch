@@ -125,3 +125,12 @@ main{
 }
 
 
+.ownerLink{
+    margin-top: 10px;
+}
+
+.ownerLink a {
+    text-decoration: none;
+    color: blue;
+}
+

@@ -18,39 +18,49 @@
         <div class="productDeatils">
           <p class="productDetailsHeading">Product Details</p>
           <div class="formSec">
-            <form action="">
+            <form
+              action="/products/create"
+              method="post"
+              enctype="multipart/form-data"
+            >
               <span class="productImageHeading">Product Image</span
-              ><input class="inputFileImage" type="file" />
+              ><input class="inputFileImage" type="file" name="image" />
               <input
                 class="inputProductName"
                 type="text"
                 placeholder="Product Name"
+                name="name"
               />
               <input
                 class="inputProductPrice"
                 type="number"
                 placeholder="Product price"
+                name="price"
               />
               <input
                 class="inputProductDiscount"
                 type="number"
                 placeholder="Discount Price"
+                name="discount"
               />
               <p class="anotherFormSecHeading">Panel Details</p>
               <input
                 class="inputProductBgcolor"
                 type="text"
                 placeholder="Background Color"
+                name="bgcolor"
               />
               <input
                 class="inputProductPanelcolor"
                 type="text"
                 placeholder="Panel Color"
+                name="panelcolor"
               />
               <input
                 class="inputProductTextColor"
                 type="text"
                 placeholder="Text Color"
+                name="textcolor"
               />
               <input type="submit" class="submitBtn" value="Create Product" />
             </form>

@@ -2,6 +2,8 @@ const express = require("express");
 const router = express();
 const ownerModel = require("../models/owners-model");
 const bcrypt = require("bcrypt");
+const { loginOwner, logoutOwner, createProduct } = require("../controllers/ownerAuthControllers");
+const isOwnerLoggedIn = require("../middlewares/isOwnerLoggedIn");
 
 
 // validate using joi
@@ -20,7 +22,7 @@ if(process.env.NODE_ENV == "development"){
                 else{
                     let createdOwner = await ownerModel.create({
                         email,
-                        password: hash,
+                        password : hash,
                         fullname
                     });
                     res
@@ -33,9 +35,21 @@ if(process.env.NODE_ENV == "development"){
     });
 }
 
-router.get("/admin", (req,res) => {
-    res.send("hey it's working");
+router.get("/admin", isOwnerLoggedIn , (req,res) => {
+    res.render("admin")
 });
+
+router.get('/login', async (req,res) => {
+    res.render("ownerLogin")
+});
+
+router.get("/create/product", isOwnerLoggedIn, (req,res) => {
+    res.render("createProducts")
+});
+
+router.post("/login", loginOwner);
+
+router.get("/logout", logoutOwner);
 
 
 module.exports = router;

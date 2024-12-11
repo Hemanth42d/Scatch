@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scatch</title>
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+  </head>
+  <body>
+    <header>
+      <p class="logo">Scatch</p>
+    </header>
+    <main>
+      <div class="mainContainer">
+        <div class="loginAccount">
+          <div class="headingOfLoginAccount">
+            <p class="loginAccText">Login your account</p>
+          </div>
+          <div class="loginformSec">
+            <form action="/owners/login" method="post">
+              <input
+                class="inputEmail"
+                type="email"
+                placeholder="Enter your Email"
+                name="email"
+              />
+              <input
+                class="inputPassword"
+                type="password"
+                placeholder="enter your Password"
+                name="password"
+              />
+              <input class="loginBtn" type="submit" value="Login" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>

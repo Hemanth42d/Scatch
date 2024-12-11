@@ -2,10 +2,14 @@
   <ul>
     <p class="shopName">Shop</p>
     <div class="links">
-      <li><a href="">Home</a></li>
-      <li><a href="">products</a></li>
-      <li><a href="">cart</a></li>
+      <li><a href="/shop">Home</a></li>
+      <li><a href="/users/cart">cart</a></li>
       <li><a href="">My account</a></li>
+      <li>
+        <a href="/users/logout" style="color: white" class="logoutBtn"
+          >logout</a
+        >
+      </li>
     </div>
   </ul>
 </nav>
@@ -40,5 +44,10 @@
 
   .shopName {
     font-size: 38px;
+  }
+  .logoutBtn {
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: red;
   }
 </style>
