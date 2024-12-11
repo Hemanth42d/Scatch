@@ -50,6 +50,10 @@ app.get("/cart", (req,res) => {
     res.render("cart")
 })
 
+app.get("/product", (req,res) => {
+    res.render("buyProduct")
+})
+
 
 app.listen(3000, () => {
     dbgr(`port is running at https://localhost:${3000}`);

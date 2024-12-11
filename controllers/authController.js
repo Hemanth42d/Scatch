@@ -26,7 +26,7 @@ module.exports.registerUser = async (req,res) => {
             });
         });
     }catch(error){
-        res.send(error.message);
+        res.send("error is :",error.message);
     }
 };
 

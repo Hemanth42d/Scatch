@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy Product</title>
+    <link rel="stylesheet" href="/stylesheets/buyProduct.css" />
+  </head>
+  <body>
+    <%- include("partials/header") %>
+    <main>
+      <%- include("partials/cartLeftNav") %>
+      <div class="productsSec">
+        <%- include("partials/product") %>
+        <div class="priceBreakDown">
+          <p class="priceBreakDownHeading">Price Breakdown</p>
+          <div class="priceDetails">
+            <div class="mrp">
+              <p>Total MRP</p>
+              <p>₹1200</p>
+            </div>
+            <div class="mrp">
+              <p>Discount on MRP</p>
+              <p>₹0</p>
+            </div>
+            <div class="mrp">
+              <p>Platform fee</p>
+              <p>₹20</p>
+            </div>
+            <div class="mrp">
+              <p>Shipping fee</p>
+              <p>Free</p>
+            </div>
+            <div class="totalPrice">
+              <div class="totalPriceDetails">
+                <p>Total Amount</p>
+                <p>₹1200</p>
+              </div>
+            </div>
+            <div class="placeOrder">
+              <a href="">Place Order</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
