@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express();
-const { registerUser, loginUser, logout, cart } = require("../controllers/authController");
+const { registerUser, loginUser, logout, cart, discountedProducts } = require("../controllers/authController");
+const isLoggendIn = require("../middlewares/isLoggendIn");
 
 router.get("/", (req,res) => {
     res.send("hey it's working");
@@ -14,7 +15,9 @@ router.post("/login", loginUser);
 
 router.get("/logout", logout);
 
-router.get("/cart", cart);
+router.get("/cart", isLoggendIn, cart);
+
+router.get('/discount/product', isLoggendIn, discountedProducts)
 
 
 

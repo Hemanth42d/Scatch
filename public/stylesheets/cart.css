@@ -37,3 +37,94 @@ main{
     column-gap: 4rem;
     row-gap: 2.8rem;
 }
+
+.product {
+    width: 15vw;
+    height: 48vh;
+    border-radius: 5px;
+  }
+
+  .productImage img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .productImage {
+    height: 60%;
+    width: 100%;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .productNAme p {
+    font-size: 20px;
+    padding: 0.5rem;
+    padding-left: 1.4rem;
+    background-color: blueviolet;
+  }
+
+  .productPriceDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    background-color: burlywood;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .addTocartIcon a {
+    text-decoration: none;
+    color: red;
+    padding: 0.1rem;
+    font-size: 18px;
+  }
+
+  .priceBreakDown{
+    width: 60%;
+    height: 65%;
+}
+
+.mrp{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px 0 10px 15px;
+}
+
+.totalPrice{
+    border-top: 2px solid black;
+    height: 100%;
+}
+
+.totalPriceDetails{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0 1rem 0;
+}
+
+.placeOrder{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 7vh;
+    margin-left: 15px;
+}
+
+.placeOrder a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    background-color: blue;
+    font-size: medium;
+    border-radius: 5px;
+}

@@ -31,15 +31,20 @@ module.exports.logoutOwner = (req,res) => {
 }
 
 module.exports.createProduct = async (req,res) => {
-    console.log(req.body)
-    let { name, price, discount, bgcolor, panelcolor, textcolor} = req.body;
-    let product = productModel.create({
-        name,
-        price,
-        discount,
-        bgcolor,
-        panelcolor,
-        textcolor
-    });
-    res.send(product);
+    try {
+        console.log(req.body)
+        let { name, discount, bgcolor, panelcolor, textcolor} = req.body;
+        let product = await productModel.create({
+            image : req.file.buffer,
+            name,
+            price : req.body.price,
+            discount,
+            bgcolor,
+            panelcolor,
+            textcolor
+        });
+       res.redirect("/owners/create/product");
+    } catch (error) {
+        res.send(error.message);
+    }
 };

@@ -47,7 +47,6 @@ router.get("/create/product", isOwnerLoggedIn, (req,res) => {
     res.render("createProducts")
 });
 
-router.post('/create/product', isOwnerLoggedIn, createProduct);
 
 router.post("/login", loginOwner);
 

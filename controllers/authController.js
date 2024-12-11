@@ -1,7 +1,7 @@
 const userModel = require("../models/user-model");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const { generateToken } =require("../utils/generateToken");
+const productModel = require("../models/product-model");
 
 module.exports.registerUser = async (req,res) => {
     try{
@@ -54,6 +54,12 @@ module.exports.logout = (req,res) => {
 };
 
 
-module.exports.cart =(req,res) => {
-    res.render("cart")
+module.exports.cart = async (req,res) => {
+    let user = await userModel.findOne({ email : req.user.email}).populate("cart");
+    res.render("cart", { user })
 };
+
+module.exports.discountedProducts = async (req,res) => {
+    let products = await productModel.find();
+    res.render("discountProducts", { products })
+}

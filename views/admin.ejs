@@ -12,7 +12,28 @@
     <main>
       <%- include("partials/leftNavAdmin") %>
 
-      <div class="productsSec"><%- include("partials/product") %></div>
+      <div class="productsSec">
+        <div class="product">
+          <div class="productImage">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR0AF_S3XWDVDbVBLgTpKBMhAsm4yyUywj9xudwVBdKzmEocb9qfjMGWUVSHnMMCXyIH5zrdqGkj79DA6eQNxznoVaO2cahxDRwOXEKv1d3"
+              alt=""
+            />
+          </div>
+          <div class="productDetails">
+            <div class="productNAme">
+              <p><%= product.name %></p>
+              <p><%= product.discount %></p>
+            </div>
+            <div class="productPriceDetails">
+              <div class="productPrice">₹<%= product.price %></div>
+              <div class="addTocartIcon">
+                <a href="">+</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <%- include("partials/footer") %>
   </body>

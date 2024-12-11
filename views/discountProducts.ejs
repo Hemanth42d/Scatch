@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="productsSec">
-        <% products.forEach((product) => { %>
+        <% products.forEach((product) => { %> <% if(product.discount > 0) { %>
         <div class="product">
           <div class="productImage">
             <img
@@ -59,7 +59,9 @@
             </div>
           </div>
         </div>
-        <% }) %>
+        <% } else { %>
+        <p class="noDiscountProducts">No Discounted Products</p>
+        <% } %> <% }) %>
       </div>
     </main>
     <%- include("partials/footer") %>
