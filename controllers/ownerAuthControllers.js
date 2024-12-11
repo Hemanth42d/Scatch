@@ -10,7 +10,6 @@ module.exports.loginOwner = async (req,res) => {
         if(!owner) return res.send("Something went wrong");
 
         bcrypt.compare(password, owner.password, (err,result) => {
-            console.log(result)
             if(result){
                 let token = generateToken(owner);
                 res.cookie("token", token);
@@ -43,4 +42,4 @@ module.exports.createProduct = async (req,res) => {
         textcolor
     });
     res.send(product);
-}
+};
