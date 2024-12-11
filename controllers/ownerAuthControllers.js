@@ -1,7 +1,7 @@
 const ownerModel = require("../models/owners-model");
 const bcrypt = require("bcrypt");
-const { generateToken } =require("../utils/generateToken");
 const productModel = require("../models/product-model");
+const { generateTokenOwners } = require("../utils/generateTokenOwners");
 
 module.exports.loginOwner = async (req,res) => {
     try{
@@ -11,7 +11,8 @@ module.exports.loginOwner = async (req,res) => {
 
         bcrypt.compare(password, owner.password, (err,result) => {
             if(result){
-                let token = generateToken(owner);
+                console.log("Working")
+                let token = generateTokenOwners(owner);
                 res.cookie("token", token);
                 res.redirect("/owners/admin")
             }else{

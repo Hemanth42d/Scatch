@@ -36,6 +36,7 @@ if(process.env.NODE_ENV == "development"){
 }
 
 router.get("/admin", isOwnerLoggedIn , (req,res) => {
+    console.log("working")
     res.render("admin")
 });
 
