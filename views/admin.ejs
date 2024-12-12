@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/6bf2bfea80.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <%- include("partials/adminPanel") %>
@@ -20,16 +21,19 @@
         <div class="product">
           <div class="productImage">
             <img
+              class="bg-[<%= product.bgcolor %>]"
               src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
               alt="Image"
             />
           </div>
           <div class="productDetails">
-            <div class="productNAme">
+            <div
+              class="productNAme txt-[<%= product.textcolor %>] bg-[<%= product.panelcolor %>]"
+            >
               <p><%= product.name %></p>
               <p>₹<%= product.discount %></p>
             </div>
-            <div class="productPriceDetails">
+            <div class="productPriceDetails bg-[<%= product.panelcolor %>]">
               <div class="productPrice">₹<%= product.price %></div>
               <div class="deleteProduct">
                 <a href="/products/delete/<%= product._id %>"

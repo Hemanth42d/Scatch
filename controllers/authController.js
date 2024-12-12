@@ -60,6 +60,6 @@ module.exports.cart = async (req,res) => {
 };
 
 module.exports.discountedProducts = async (req,res) => {
-    let products = await productModel.find();
+    let products = await productModel.find({ discount: { $gt: 0 } });
     res.render("discountProducts", { products })
 }

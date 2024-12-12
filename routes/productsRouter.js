@@ -14,7 +14,6 @@ router.post('/create/product', isOwnerLoggedIn, upload.single("image") ,createPr
 
 router.get("/delete/:productid", isOwnerLoggedIn, async (req,res) => {
     let product = await productModel.findOneAndDelete( { _id : req.params.productid });
-    console.log(product)
     res.redirect("/owners/admin");
 });
 

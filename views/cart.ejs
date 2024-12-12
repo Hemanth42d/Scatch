@@ -9,6 +9,7 @@
   <body>
     <%- include("partials/header") %>
     <main>
+      <% if(user.cart.length > 0) { %>
       <div class="productsSec">
         <div class="product">
           <div class="productImage">
@@ -50,10 +51,19 @@
             </div>
             <div class="placeOrder">
               <a href="">Place Order</a>
+              <a
+                href="/users/cart/<%= user.cart[0]._id %>"
+                style="background-color: red"
+                >Remove From Cart</a
+              >
             </div>
           </div>
         </div>
       </div>
+      <% } else { %>
+      <p class="noCartItems">No item in the cart add an item from the shop</p>
+      <% }%>
     </main>
+    <%- include("partials/footer") %>
   </body>
 </html>
