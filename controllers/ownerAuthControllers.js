@@ -49,3 +49,7 @@ module.exports.createProduct = async (req,res) => {
         res.send(error.message);
     }
 };
+
+module.exports.ownersMyAccount = (req,res) => {
+    res.render("OwnersMyAccount")
+}

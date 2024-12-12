@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif", serif;
+}
+
+body,html{
+  height: 100%;
+  width: 100%;
+}
+
+main{
+  display: flex;
+}
+
+.leftSec{
+  min-height: 80vh;
+  border: 2px solid red;
+  width: 30%;
+}
+
+.leftSec{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.ordersLink{
+  text-decoration: none;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+}
+
+img{
+  min-height : 30vh;
+  min-width: 15vw;
+  border-radius: 50%;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.fullName{
+  padding-top: 1rem;
+  padding-left: 2rem;
+  font-size: 2rem;
+}
+
+.rightSec{
+  min-height: 80vh;
+  border: 2px solid red;
+  width: 70%;
+  padding: 2rem;
+}
+
+.usersDetailsHeading{
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.formSection{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputFullName , .inputContactNumber, .inputEmail, .inputPassword {
+  width: 50%;
+  padding: 0.4rem;
+  background-color: rgb(233, 233, 233);
+  outline: none;
+  border: none;
+  font-size: medium;
+  padding-left: 1.1rem;
+  border-radius: 7px;
+}
+
+.submitBtn{
+  color: white;
+  background-color: blue;
+  padding: 6px;
+  font-size: medium;
+  border-radius: 8px;
+  margin-left: 15px;
+  border: none;
+  width: 20%;
+}
+
+.anotherFormSec{
+  margin-top: 25px;
+}
+
+.changeDetails{
+  text-decoration: none;
+  color: blue;
+}
+
+.anotherForm{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+

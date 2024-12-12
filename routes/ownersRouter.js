@@ -2,7 +2,7 @@ const express = require("express");
 const router = express();
 const ownerModel = require("../models/owners-model");
 const bcrypt = require("bcrypt");
-const { loginOwner, logoutOwner, createProduct } = require("../controllers/ownerAuthControllers");
+const { loginOwner, logoutOwner, createProduct, ownersMyAccount } = require("../controllers/ownerAuthControllers");
 const isOwnerLoggedIn = require("../middlewares/isOwnerLoggedIn");
 const productModel = require("../models/product-model");
 
@@ -53,6 +53,8 @@ router.get("/create/product", isOwnerLoggedIn, (req,res) => {
 router.post("/login", loginOwner);
 
 router.get("/logout", logoutOwner);
+
+router.get("/ownersMyAccount", ownersMyAccount);
 
 
 module.exports = router;

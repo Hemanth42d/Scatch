@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account</title>
+    <link rel="stylesheet" href="/stylesheets/myAccount.css" />
+  </head>
+  <body>
+    <%- include("partials/header") %>
+    <main>
+      <div class="leftSec">
+        <div class="profile">
+          <img src="" alt="Profile Pic" />
+          <p class="fullName">UserName</p>
+        </div>
+      </div>
+      <div class="rightSec">
+        <p class="usersDetailsHeading">Enter Your Details</p>
+        <div class="formSec">
+          <form
+            class="formSection"
+            action=""
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <input class="imageUpload" type="file" />
+            <input
+              class="inputFullName"
+              type="text"
+              placeholder="Enter Your Full Name"
+            />
+            <input
+              class="inputContactNumber"
+              type="text"
+              placeholder="Enter Your Contact Number"
+            />
+            <input
+              class="inputContactNumber"
+              type="text"
+              placeholder="Enter your gst Number"
+            />
+            <input class="submitBtn" type="submit" value="Submit Details" />
+          </form>
+          <div class="anotherFormSec">
+            <p>Want to change Your Email Or Password?</p>
+            <form action="" method="post" class="anotherForm">
+              <input
+                class="inputEmail"
+                type="email"
+                placeholder="Enter Your New Email"
+              />
+              <input
+                class="inputPassword"
+                type="password"
+                placeholder="Enter your new password"
+              />
+              <input type="submit" class="submitBtn" value="Change Details" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include("partials/footer") %>
+
+    <script src="/javascripts/changedetails.js"></script>
+  </body>
+</html>

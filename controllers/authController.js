@@ -2,6 +2,7 @@ const userModel = require("../models/user-model");
 const bcrypt = require("bcrypt");
 const { generateToken } =require("../utils/generateToken");
 const productModel = require("../models/product-model");
+const { default: mongoose } = require("mongoose");
 
 module.exports.registerUser = async (req,res) => {
     try{
@@ -62,4 +63,20 @@ module.exports.cart = async (req,res) => {
 module.exports.discountedProducts = async (req,res) => {
     let products = await productModel.find({ discount: { $gt: 0 } });
     res.render("discountProducts", { products })
+}
+
+module.exports.addToCart = async (req,res) => {
+    const userId = req.user._id;
+    const userObjectId = new mongoose.Types.ObjectId(userId);
+    const productObjectId = new mongoose.Types.ObjectId(req.params.productid);
+
+    const result = await userModel.updateOne(
+      { _id: userObjectId },
+      { $pull: { cart: productObjectId } }
+    );
+    res.redirect("/users/cart");
+};
+
+module.exports.myaccount = (req,res) => {
+    res.render("usersMyAccount")
 }
