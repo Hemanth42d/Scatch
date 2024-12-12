@@ -5,35 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop</title>
     <link rel="stylesheet" href="/stylesheets/admin.css" />
+    <script
+      src="https://kit.fontawesome.com/6bf2bfea80.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <%- include("partials/adminPanel") %>
 
     <main>
-      <%- include("partials/leftNavAdmin") %>
-
+      <%- include("partials/leftNavAdmin") %> <% if(products.length > 0) { %>
       <div class="productsSec">
+        <% products.forEach((product) => { %>
         <div class="product">
           <div class="productImage">
             <img
-              src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR0AF_S3XWDVDbVBLgTpKBMhAsm4yyUywj9xudwVBdKzmEocb9qfjMGWUVSHnMMCXyIH5zrdqGkj79DA6eQNxznoVaO2cahxDRwOXEKv1d3"
-              alt=""
+              src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
+              alt="Image"
             />
           </div>
           <div class="productDetails">
             <div class="productNAme">
               <p><%= product.name %></p>
-              <p><%= product.discount %></p>
+              <p>₹<%= product.discount %></p>
             </div>
             <div class="productPriceDetails">
               <div class="productPrice">₹<%= product.price %></div>
-              <div class="addTocartIcon">
-                <a href="">+</a>
+              <div class="deleteProduct">
+                <a href="/products/delete/<%= product._id %>"
+                  ><i class="fa-solid fa-trash"></i
+                ></a>
               </div>
             </div>
           </div>
         </div>
+        <% }) %>
       </div>
+      <% } else { %>
+      <p class="noProducts">No products yet.Create them</p>
+      <% } %>
     </main>
     <%- include("partials/footer") %>
   </body>

@@ -114,6 +114,10 @@ main{
     margin-left: 15px;
 }
 
+.createbtn:hover{
+    cursor: pointer;
+}
+
 .loginBtn{
     color: white;
     background-color: blue;
@@ -122,6 +126,10 @@ main{
     border-radius: 8px;
     margin-left: 15px;
     border: none;
+}
+
+.loginBtn:hover{
+    cursor: pointer;
 }
 
 

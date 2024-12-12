@@ -4,6 +4,7 @@ const ownerModel = require("../models/owners-model");
 const bcrypt = require("bcrypt");
 const { loginOwner, logoutOwner, createProduct } = require("../controllers/ownerAuthControllers");
 const isOwnerLoggedIn = require("../middlewares/isOwnerLoggedIn");
+const productModel = require("../models/product-model");
 
 
 // validate using joi
@@ -35,9 +36,9 @@ if(process.env.NODE_ENV == "development"){
     });
 }
 
-router.get("/admin", isOwnerLoggedIn , (req,res) => {
-    console.log("working")
-    res.render("admin")
+router.get("/admin", isOwnerLoggedIn , async (req,res) => {
+    let products = await productModel.find();
+    res.render("admin", { products })
 });
 
 router.get('/login', async (req,res) => {

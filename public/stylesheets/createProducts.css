@@ -74,6 +74,10 @@ main{
     margin-left: 15px;
 }
 
+.submitBtn:hover{
+    cursor: pointer;
+}
+
 
 
 
