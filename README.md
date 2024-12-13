@@ -10,6 +10,6 @@ Contains only a single owner he can create a product and delete a product.
 - **Add to cart Functionality**
 - **Creating an user**
 - **login and logout Functionality**
-- **can upload profile picture of the user**
-- **Can filter Discounted products and all Products**
-- **Can update user details like contact number address and name**
+- **Upload profile picture of the user**
+- **Filter Discounted products and all Products**
+- **Update user details like contact number address and name**
