@@ -2,9 +2,10 @@ const express = require("express");
 const router = express();
 const ownerModel = require("../models/owners-model");
 const bcrypt = require("bcrypt");
-const { loginOwner, logoutOwner, createProduct, ownersMyAccount } = require("../controllers/ownerAuthControllers");
+const { loginOwner, logoutOwner, createProduct, ownersMyAccount, myaccount, myAcountDetails } = require("../controllers/ownerAuthControllers");
 const isOwnerLoggedIn = require("../middlewares/isOwnerLoggedIn");
 const productModel = require("../models/product-model");
+const upload = require("../config/multer-config");
 
 
 // validate using joi
@@ -54,7 +55,10 @@ router.post("/login", loginOwner);
 
 router.get("/logout", logoutOwner);
 
-router.get("/ownersMyAccount", ownersMyAccount);
+router.get("/ownersMyAccount",isOwnerLoggedIn, ownersMyAccount);
+
+
+router.post("/myaccountDetails", isOwnerLoggedIn, upload.single("image"),  myAcountDetails);
 
 
 module.exports = router;

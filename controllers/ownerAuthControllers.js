@@ -2,6 +2,8 @@ const ownerModel = require("../models/owners-model");
 const bcrypt = require("bcrypt");
 const productModel = require("../models/product-model");
 const { generateTokenOwners } = require("../utils/generateTokenOwners");
+const ownersModel = require("../models/owners-model");
+const jwt = require("jsonwebtoken")
 
 module.exports.loginOwner = async (req,res) => {
     try{
@@ -10,8 +12,7 @@ module.exports.loginOwner = async (req,res) => {
         if(!owner) return res.send("Something went wrong");
 
         bcrypt.compare(password, owner.password, (err,result) => {
-            if(result){
-                console.log("Working")
+            if(result){r
                 let token = generateTokenOwners(owner);
                 res.cookie("token", token);
                 res.redirect("/owners/admin")
@@ -21,7 +22,7 @@ module.exports.loginOwner = async (req,res) => {
         });
 
     }catch(err){
-        console.log(err.message)
+        res.send(err.message)
     }
 
 };
@@ -33,7 +34,6 @@ module.exports.logoutOwner = (req,res) => {
 
 module.exports.createProduct = async (req,res) => {
     try {
-        console.log(req.body)
         let { name, discount, bgcolor, panelcolor, textcolor} = req.body;
         let product = await productModel.create({
             image : req.file.buffer,
@@ -50,6 +50,32 @@ module.exports.createProduct = async (req,res) => {
     }
 };
 
-module.exports.ownersMyAccount = (req,res) => {
-    res.render("OwnersMyAccount")
-}
+module.exports.ownersMyAccount = async (req,res) => {
+    try {
+        let decoded = jwt.verify(req.cookies.token, process.env.JWT_KEY_SECOND);
+            let owner = await ownersModel
+                .findOne({ email : decoded.email })
+                .select("-password");
+        res.render("ownersMyAccount", { owner });  
+    } catch (error) {
+        res.send(error.message)
+    }
+};
+
+
+module.exports.myAcountDetails = async (req,res) => {
+    try {
+        let owner = await ownerModel.findOneAndUpdate(
+            { email : req.owner.email },
+            {
+                fullname : req.body.fullname,
+                contact : req.body.contact,
+                gstin : req.body.gstin,
+                picture : req.file.buffer
+            }
+        );
+res.render("ownersMyAccount", { owner });
+    } catch (error) {
+        res.send(error.message);
+    }
+};

@@ -5,8 +5,7 @@ const userModel = require("../models/user-model");
 const router = express.Router();
 
 router.get("/", (req,res) => {
-    let error = req.flash("error");
-    res.render("index", { error });
+    res.render("index");
 });
 
 router.get("/shop", isLoggendIn, async (req,res) => {

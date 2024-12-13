@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="/stylesheets/myAccount.css" />
   </head>
   <body>
-    <%- include("partials/header") %>
+    <%- include("partials/adminPanel") %>
     <main>
       <div class="leftSec">
         <div class="profile">
-          <img src="" alt="Profile Pic" />
-          <p class="fullName">UserName</p>
+          <img
+            src="data:image/jpeg;base64,<%= owner.picture.toString('base64') %>"
+            alt="Profile Pic"
+          />
+          <p class="fullName">@<%= owner.fullname %></p>
         </div>
       </div>
       <div class="rightSec">
@@ -20,49 +23,37 @@
         <div class="formSec">
           <form
             class="formSection"
-            action=""
+            action="/owners/myaccountDetails"
             method="post"
             enctype="multipart/form-data"
           >
-            <input class="imageUpload" type="file" />
+            <input class="imageUpload" type="file" name="image" />
             <input
               class="inputFullName"
               type="text"
               placeholder="Enter Your Full Name"
+              name="fullname"
+              value="<%= owner.fullname %>"
             />
             <input
               class="inputContactNumber"
               type="text"
               placeholder="Enter Your Contact Number"
+              name="contact"
+              value="<%= owner.contact %>"
             />
             <input
-              class="inputContactNumber"
               type="text"
-              placeholder="Enter your gst Number"
+              placeholder="Enter your gstin number"
+              class="inputContactNumber"
+              name="gstin"
+              value="<%= owner.gstin %>"
             />
-            <input class="submitBtn" type="submit" value="Submit Details" />
+            <input class="submitBtn" type="submit" value="update Details" />
           </form>
-          <div class="anotherFormSec">
-            <p>Want to change Your Email Or Password?</p>
-            <form action="" method="post" class="anotherForm">
-              <input
-                class="inputEmail"
-                type="email"
-                placeholder="Enter Your New Email"
-              />
-              <input
-                class="inputPassword"
-                type="password"
-                placeholder="Enter your new password"
-              />
-              <input type="submit" class="submitBtn" value="Change Details" />
-            </form>
-          </div>
         </div>
       </div>
     </main>
     <%- include("partials/footer") %>
-
-    <script src="/javascripts/changedetails.js"></script>
   </body>
 </html>

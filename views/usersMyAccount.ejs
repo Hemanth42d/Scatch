@@ -12,8 +12,11 @@
       <div class="leftSec">
         <a href="/users/orders" class="ordersLink">Orders</a>
         <div class="profile">
-          <img src="" alt="Profile Pic" />
-          <p class="fullName">UserName</p>
+          <img
+            src="data:image/jpeg;base64,<%= user.picture.toString('base64') %>"
+            alt="Profile Pic"
+          />
+          <p class="fullName">@<%= user.fullname %></p>
         </div>
       </div>
       <div class="rightSec">
@@ -21,44 +24,38 @@
         <div class="formSec">
           <form
             class="formSection"
-            action=""
+            action="/users/myaccountDetails"
             method="post"
             enctype="multipart/form-data"
           >
-            <input class="imageUpload" type="file" />
+            <input class="imageUpload" type="file" name="image" />
             <input
               class="inputFullName"
               type="text"
               placeholder="Enter Your Full Name"
+              name="fullname"
+              value="<%= user.fullname %>"
             />
             <input
               class="inputContactNumber"
               type="text"
               placeholder="Enter Your Contact Number"
+              name="contact"
+              value="<%= user.contact %>"
             />
-            <input class="submitBtn" type="submit" value="Submit Details" />
+            <textarea
+              type="text"
+              class="inputFullName"
+              placeholder="Enter Your Address"
+              name="address"
+            >
+<%= user.address %></textarea
+            >
+            <input class="submitBtn" type="submit" value="update Details" />
           </form>
-          <div class="anotherFormSec">
-            <p>Want to change Your Email Or Password?</p>
-            <form action="" method="post" class="anotherForm">
-              <input
-                class="inputEmail"
-                type="email"
-                placeholder="Enter Your New Email"
-              />
-              <input
-                class="inputPassword"
-                type="password"
-                placeholder="Enter your new password"
-              />
-              <input type="submit" class="submitBtn" value="Change Details" />
-            </form>
-          </div>
         </div>
       </div>
     </main>
     <%- include("partials/footer") %>
-
-    <script src="/javascripts/changedetails.js"></script>
   </body>
 </html>

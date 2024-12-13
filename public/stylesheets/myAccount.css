@@ -19,7 +19,6 @@ main{
 
 .leftSec{
   min-height: 80vh;
-  border: 2px solid red;
   width: 30%;
 }
 
@@ -38,8 +37,8 @@ main{
 }
 
 img{
-  min-height : 30vh;
-  min-width: 15vw;
+  max-height : 40vh;
+  max-width: 20vw;
   border-radius: 50%;
   border: 2px solid black;
   text-align: center;
@@ -53,7 +52,6 @@ img{
 
 .rightSec{
   min-height: 80vh;
-  border: 2px solid red;
   width: 70%;
   padding: 2rem;
 }
@@ -91,6 +89,10 @@ img{
   width: 20%;
 }
 
+.submitBtn:hover, .changeDetails:hover{
+  cursor: pointer;
+}
+
 .anotherFormSec{
   margin-top: 25px;
 }
@@ -107,4 +109,6 @@ img{
   gap: 1rem;
 }
 
-
+textarea{
+  resize: none;
+}

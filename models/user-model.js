@@ -4,10 +4,17 @@ const userSchema = mongoose.Schema({
     fullname : {
         type : String,
         minLength : 3,
-        trim : true
+        trim : true,
+        required : true
     },
-    email : String,
-    password : String,
+    email : {
+        type : String,
+        required : true
+    },
+    password :  {
+        type : String,
+        required : true
+    },
     cart : [{
         type : mongoose.Schema.Types.ObjectId,
         default : [],
@@ -18,7 +25,11 @@ const userSchema = mongoose.Schema({
         default : []
     },
     contact : Number,
-    picture : Buffer
+    picture : {
+        type : Buffer,
+        default : "default.png"
+    },
+    address : String
 });
 
 module.exports = mongoose.model("user", userSchema);

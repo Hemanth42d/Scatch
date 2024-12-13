@@ -1,10 +1,8 @@
 const jwt = require("jsonwebtoken");
-const flash = require("connect-flash");
 const ownersModel = require("../models/owners-model");
 
 module.exports = async (req, res , next) => {
     if(!req.cookies.token){
-        req.flash("error", "You need to login first");
         return res.redirect("/owners/login");
     }
 
@@ -16,7 +14,6 @@ module.exports = async (req, res , next) => {
             next();
         req.owner = owner;
     } catch (error) {
-        req.flash("Error", "Something Went Wrong");
         res.redirect('/owners/login')
     }
 }

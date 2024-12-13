@@ -32,7 +32,8 @@ module.exports.registerUser = async (req,res) => {
 };
 
 module.exports.loginUser = async (req,res) => {
-    let {email, password} = req.body;
+    try {
+        let {email, password} = req.body;
     let user = await userModel.findOne({ email });
     if(!user) {
         return res.send("Email or password is incorrect");
@@ -47,6 +48,9 @@ module.exports.loginUser = async (req,res) => {
             res.send("Email or password is incorrect")
         }
     });
+    } catch (error) {
+        res.send(error.message);
+    }
 };
 
 module.exports.logout = (req,res) => {
@@ -66,17 +70,39 @@ module.exports.discountedProducts = async (req,res) => {
 }
 
 module.exports.addToCart = async (req,res) => {
-    const userId = req.user._id;
-    const userObjectId = new mongoose.Types.ObjectId(userId);
-    const productObjectId = new mongoose.Types.ObjectId(req.params.productid);
+    try {
+        const userId = req.user._id;
+        const userObjectId = new mongoose.Types.ObjectId(userId);
+        const productObjectId = new mongoose.Types.ObjectId(req.params.productid);
 
-    const result = await userModel.updateOne(
-      { _id: userObjectId },
-      { $pull: { cart: productObjectId } }
-    );
+        const result = await userModel.updateOne(
+        { _id: userObjectId },
+        { $pull: { cart: productObjectId } }
+        );
     res.redirect("/users/cart");
+    } catch (error) {
+        res.send(error.message);
+    }
 };
 
-module.exports.myaccount = (req,res) => {
-    res.render("usersMyAccount")
+module.exports.myaccount = async (req,res) => {
+    let user = await userModel.findOne({ email : req.user.email });
+    res.render("usersMyAccount", { user });
 }
+
+module.exports.myAcountDetails = async (req,res) => {
+    try {
+        let user = await userModel.findOneAndUpdate(
+            { email : req.user.email },
+            { 
+                fullname : req.body.fullname,
+                contact : req.body.contact, 
+                address : req.body.address,
+                picture : req.file.buffer 
+            }
+        );
+        res.render("usersMyAccount", { user });
+    } catch (error) {
+        res.send(error.message);
+    }
+};
