@@ -12,7 +12,7 @@ module.exports.loginOwner = async (req,res) => {
         if(!owner) return res.send("Something went wrong");
 
         bcrypt.compare(password, owner.password, (err,result) => {
-            if(result){r
+            if(result){
                 let token = generateTokenOwners(owner);
                 res.cookie("token", token);
                 res.redirect("/owners/admin")
